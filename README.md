@@ -1,29 +1,25 @@
 **Week 2: Express.js Fundamentals Assignment**
 
-**Objective:**
+**Project Overview:**
 
-- Apply Express.js concepts learned throughout the week.
-- Develop hands-on experience with creating routes, middleware, and API endpoints.
-- Understand and implement RESTful APIs.
+-This project demonstrates the creation of a RESTful API using Express.js with a clear folder structure, route handling, middleware implementation, and error handling. The API provides endpoints for managing users and products.
 
-**Instructions:**
 
 1. **Setup Express.js Project:**
 
-   - Install Node.js using NVM.
-   - Create a new project folder named `express-assignment`.
-   - Initialize a Node.js project using:
+   - Installed Node.js using NVM.
+   - Created a new project folder named `express-assignment`.
+   - Initialized a Node.js project using:
      ```sh
      npm init -y
      ```
-   - Install necessary dependencies:
+   - Installed necessary dependencies:
      ```sh
      npm install express dotenv
      ```
 
 2. **Project Structure:**
 
-   - Organize your project files with a clear folder structure:
      ```
      express-assignment/
      │-- routes/
@@ -40,30 +36,46 @@
      │-- .env
      ```
 
-3. **Create Routes:**
+3. **Running the Application**
+ -Start the server:
+node index.js
 
-   - Create `userRoutes.js` and `productRoutes.js` inside the `routes/` folder.
-   - Implement RESTful routes for users and products (GET, POST, PUT, DELETE).
-   - Ensure proper usage of route parameters and query strings.
 
-4. **Implement Middleware:**
+4. **API Endpoints**
+   **User Endpoints**
+   HTTP    Method	Endpoint   	Description
+   GET	    /api/users	      Fetch all users
+   GET	    /api/users/:id	Fetch a user by ID
+   POST	    /api/users	      Create a new user
+   PUT	    /api/users/:id	Update a user by ID
+   DELETE	 /api/users/:id	Delete a user by ID
 
-   - Create a custom middleware function in `middleware/logger.js` to log request details (method, URL, timestamp).
-   - Apply middleware globally to all routes.
+  
 
-5. **Develop Controllers:**
+5. **Product Endpoints:**
+   HTTP    Method	Endpoint	      Description
+   GET	   /api/products	      Fetch all products
+   GET	   /api/products/:id	   Fetch a product by ID
+   POST	   /api/products	      Create a new product
+   PUT	   /api/products/:id	   Update a product by ID
+   DELETE	/api/products/:id	   Delete a product by ID
 
-   - Create controller functions in `controllers/userController.js` and `controllers/productController.js`.
-   - Implement business logic to handle requests and responses.
+   
 
-6. **Environment Variables:**
+6. **Error Handling:**
+  app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ error: "Something went wrong!" });
+});
 
-   - Use `dotenv` to manage environment variables.
-   - Define variables such as `PORT` in the `.env` file and access them inside the application.
+7. **Environment Variables:**
 
-7. **Error Handling:**
+The .env file contains configuration variables like the server's port:
+PORT=3000
 
-   - Implement a global error-handling middleware to catch and respond to errors gracefully.
+Load them using dotenv:
+require("dotenv").config();
+
 
 8. **Testing:**
 
@@ -71,23 +83,38 @@
      ```sh
      node index.js
      ```
-   - Test API endpoints using Postman or cURL.
-   - Verify routes, middleware functionality, and error handling.
+   - Tested API endpoints using Postman.
+9. **Example Requests:**
+    **Fetch All Users**
+    Request:
+GET /api/users
 
-9. **Documentation:**
+   Response:
+{ "message": "Fetching all users" }
 
-   - Add a `README.md` with instructions on setting up and running the project.
-   - Document available API endpoints with descriptions and example requests.
+   **Create a New Product**
+   Request:
 
-10. **Submission:**
+POST /api/products
+Content-Type: application/json
 
-   - Push your code to your GitHub repository.
+{
+  "name": "Laptop",
+  "description": "A powerful laptop",
+  "price": 1200
+}
 
-**Evaluation Criteria:**
+  Response:
 
-- Correct implementation of Express routes and middleware.
-- Proper error handling and logging.
-- Clean project structure and code organization.
-- Detailed documentation with clear instructions.
-- Successful testing of all endpoints.
+{
+  "message": "Creating a new product",
+  "data": {
+    "name": "Laptop",
+    "description": "A powerful laptop",
+    "price": 1200
+  }
+}
+
+
+
 
