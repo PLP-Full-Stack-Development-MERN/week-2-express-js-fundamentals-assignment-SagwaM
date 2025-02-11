@@ -43,6 +43,7 @@ node index.js
 
 4. **API Endpoints**
    **User Endpoints**
+   
 | HTTP Method | Endpoint           | Description                   |
 |-------------|--------------------|-------------------------------|
 | GET         | `/api/users`       | Fetch all users               |
@@ -54,6 +55,7 @@ node index.js
   
 
 5. **Product Endpoints:**
+   
 | HTTP Method | Endpoint           | Description                   |
 |-------------|--------------------|-------------------------------|
 | GET         | `/api/products`       | Fetch all products         |
