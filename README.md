@@ -43,22 +43,24 @@ node index.js
 
 4. **API Endpoints**
    **User Endpoints**
-   HTTP    Method	Endpoint   	Description
-   GET	    /api/users	      Fetch all users
-   GET	    /api/users/:id	Fetch a user by ID
-   POST	    /api/users	      Create a new user
-   PUT	    /api/users/:id	Update a user by ID
-   DELETE	 /api/users/:id	Delete a user by ID
+| HTTP Method | Endpoint           | Description                   |
+|-------------|--------------------|-------------------------------|
+| GET         | `/api/users`       | Fetch all users               |
+| GET         | `/api/users/:id`   | Fetch a user by ID            |
+| POST        | `/api/users`       | Create a new user             |
+| PUT         | `/api/users/:id`   | Update a user by ID           |
+| DELETE      | `/api/users/:id`   | Delete a user by ID           |
 
   
 
 5. **Product Endpoints:**
-   HTTP    Method	Endpoint	      Description
-   GET	   /api/products	      Fetch all products
-   GET	   /api/products/:id	   Fetch a product by ID
-   POST	   /api/products	      Create a new product
-   PUT	   /api/products/:id	   Update a product by ID
-   DELETE	/api/products/:id	   Delete a product by ID
+| HTTP Method | Endpoint           | Description                   |
+|-------------|--------------------|-------------------------------|
+| GET         | `/api/products`       | Fetch all products         |
+| GET         | `/api/productss/:id`  | Fetch a product by ID      |
+| POST        | `/api/products`       | Create a new product       |
+| PUT         | `/api/products/:id`   | Update a product by ID     |
+| DELETE      | `/api/products/:id`   | Delete a product by ID     |
 
    
 
